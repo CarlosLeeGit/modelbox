@@ -112,6 +112,9 @@ class Graph {
   std::set<std::shared_ptr<NodeBase>> GetEndPointNodes() const;
 
  private:
+  void ShowGraphInfo(std::shared_ptr<GCGraph> g);
+  Status CheckGraph();
+
   Status BuildFlowunitNode(std::shared_ptr<GCGraph> g,
                            std::shared_ptr<GCNode> gcnode, bool strict);
 
@@ -156,8 +159,6 @@ class Graph {
   Status UpdatePriority();
 
   Status GenerateTopology();
-
-  Status CheckStreamMatcher();
 
   Status CheckLoopStructureNode();
 
